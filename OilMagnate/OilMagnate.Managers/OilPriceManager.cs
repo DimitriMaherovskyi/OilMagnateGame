@@ -6,13 +6,13 @@ namespace OilMagnate.Managers
     public class OilPriceManager
     {
         private readonly Random _random;
-        private readonly int _pricingTrendsCount;
-        private readonly Tuple<int, int> _trendDurationBounds;
-        private readonly Tuple<int, int> _positiveTrendChangeBounds;
-        private readonly Tuple<int, int> _negativeTrendChangeBounds;
-        private readonly Tuple<int, int> _stableTrendChangeBounds;
-        private PricingTrends _pricingTrend;
-        private int _trendDuration;
+        private readonly int _pricingTrendsCount; //Кількість усіх трендів
+        private readonly Tuple<int, int> _trendDurationBounds; //Тривалість тренду
+        private readonly Tuple<int, int> _positiveTrendChangeBounds; //Відсотковий приріст при позитивній ціні мін макс
+        private readonly Tuple<int, int> _negativeTrendChangeBounds; //Відсотковий приріст при негативній ціні мін макс
+        private readonly Tuple<int, int> _stableTrendChangeBounds; //Відсотковий приріст при нейтральній ціні мін макс
+        private PricingTrends _pricingTrend; //Поточний тренд
+        private int _trendDuration; //Довжина тренду
 
         public OilPriceManager()
         {
@@ -27,14 +27,14 @@ namespace OilMagnate.Managers
             _stableTrendChangeBounds = new Tuple<int, int>(-10, 10);
         }
 
-        public int OilPrice { get; private set; }
+        public int OilPrice { get; private set; } //Ціна на нафту
 
-        public void ChangeOilPrice()
+        public void ChangeOilPrice() //Викликається щокроку
         {
-            if (_trendDuration == 0)
+            if (_trendDuration == 0) //Якщо заінчився тренд, то перевизначити тренд
             {
                 ChangeTrend();
-                SetTrendDuration();
+                SetTrendDuration(); //Задати тривалість новому тренду
             }
 
             _trendDuration--;
@@ -62,7 +62,7 @@ namespace OilMagnate.Managers
             }
         }
 
-        private void ChangeTrend()
+        private void ChangeTrend() //Зміна тренду
         {
             var currentTrend = (int)_pricingTrend;
             var nextTrend = currentTrend;
@@ -76,13 +76,13 @@ namespace OilMagnate.Managers
             _pricingTrend = (PricingTrends)nextTrend;
         }
 
-        private void SetTrendDuration()
+        private void SetTrendDuration() //Задати довжину тренду
         {
             _trendDuration = _random.Next(_trendDurationBounds.Item1,
                 _trendDurationBounds.Item2);
         }
 
-        private void SetOilPrice(Tuple<int, int> changeBounds)
+        private void SetOilPrice(Tuple<int, int> changeBounds) //Задати ціну на нафту
         {
             var changePriceCoef = 1d;
             var changePricePercentage = _random.Next(changeBounds.Item1, changeBounds.Item2);

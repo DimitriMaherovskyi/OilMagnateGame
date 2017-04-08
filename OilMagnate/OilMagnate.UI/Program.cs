@@ -12,6 +12,8 @@ namespace OilMagnate.UI
 {
     class Program
     {
+        public const int StartingSalary = 10;
+
         static void Main(string[] args)
         {
             var plates = new List<IOilPlate>()
@@ -22,9 +24,9 @@ namespace OilMagnate.UI
             };
 
             var oilMagnate = new OilMagnateManager(plates);
-            oilMagnate.AddOilLoft(0, new SmallOilLoft());
-            oilMagnate.AddOilLoft(2, new BigOilLoft());
-            oilMagnate.AddOilStorage(0, new SmallOilStorage());
+            oilMagnate.AddOilLoft(0, new SmallOilLoft(StartingSalary));
+            oilMagnate.AddOilLoft(2, new BigOilLoft(StartingSalary));
+            oilMagnate.AddOilStorage(0, new SmallOilStorage(StartingSalary));
             oilMagnate.NextTurn();
             oilMagnate.NextTurn();
             oilMagnate.NextTurn();

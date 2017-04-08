@@ -9,5 +9,6 @@ namespace OilMagnate.Models.Abstraction
     public interface IOilLoft : IBuilding
     { 
         int ExtractionPerTurn { get; }
+        void RecalculateExtractionPerTurn(int newWorkersSalary);
     }
 }
