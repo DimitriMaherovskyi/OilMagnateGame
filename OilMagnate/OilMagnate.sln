@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OilMagnate.Models", "OilMagnate\OilMagnate.Models.csproj", "{65745E0B-744E-4610-8D22-4F7C0B5C462E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OilMagnate.Core", "OilMagnate.Core\OilMagnate.Core.csproj", "{63935BE7-C6F0-4C93-AF82-19E558F92677}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OilMagnate.Managers", "OilMagnate.Managers\OilMagnate.Managers.csproj", "{A9DC34C1-F0FB-48A3-A2B1-7363352D59E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OilMagnate.UI", "OilMagnate.UI\OilMagnate.UI.csproj", "{046EE0C3-04EC-468D-AEFF-202C1918E264}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65745E0B-744E-4610-8D22-4F7C0B5C462E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65745E0B-744E-4610-8D22-4F7C0B5C462E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65745E0B-744E-4610-8D22-4F7C0B5C462E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65745E0B-744E-4610-8D22-4F7C0B5C462E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63935BE7-C6F0-4C93-AF82-19E558F92677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63935BE7-C6F0-4C93-AF82-19E558F92677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63935BE7-C6F0-4C93-AF82-19E558F92677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63935BE7-C6F0-4C93-AF82-19E558F92677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9DC34C1-F0FB-48A3-A2B1-7363352D59E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9DC34C1-F0FB-48A3-A2B1-7363352D59E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9DC34C1-F0FB-48A3-A2B1-7363352D59E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9DC34C1-F0FB-48A3-A2B1-7363352D59E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{046EE0C3-04EC-468D-AEFF-202C1918E264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{046EE0C3-04EC-468D-AEFF-202C1918E264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{046EE0C3-04EC-468D-AEFF-202C1918E264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{046EE0C3-04EC-468D-AEFF-202C1918E264}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
