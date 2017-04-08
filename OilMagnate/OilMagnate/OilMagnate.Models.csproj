@@ -46,11 +46,13 @@
     <Compile Include="Abstraction\IOilStorage.cs" />
     <Compile Include="Abstraction\IWorker.cs" />
     <Compile Include="BigOilLoft.cs" />
+    <Compile Include="Enums\PricingTrends.cs" />
     <Compile Include="OilPlate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmallOilLoft.cs" />
     <Compile Include="SmallOilStorage.cs" />
     <Compile Include="Worker.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

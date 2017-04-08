@@ -25,8 +25,24 @@ namespace OilMagnate.UI
             oilMagnate.AddOilLoft(0, new SmallOilLoft());
             oilMagnate.AddOilLoft(2, new BigOilLoft());
             oilMagnate.AddOilStorage(0, new SmallOilStorage());
-            oilMagnate.CountMoney();
-            oilMagnate.CountMoney();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+            oilMagnate.NextTurn();
+
             Console.WriteLine();
         }
     }

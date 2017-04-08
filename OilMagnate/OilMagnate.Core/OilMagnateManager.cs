@@ -12,13 +12,21 @@ namespace OilMagnate.Core
     {
         private readonly List<IOilPlate> _plates;
         private readonly PlateManager _plateManager;
+        private readonly OilPriceManager _oilPriceManager;
         private int _totalMoney;
 
         public OilMagnateManager(IEnumerable<IOilPlate> plates)
         {
             _plates = new List<IOilPlate>(plates);
             _plateManager = new PlateManager(_plates);
+            _oilPriceManager = new OilPriceManager();
             _totalMoney = 1000;
+        }
+
+        public void NextTurn()
+        {
+            _oilPriceManager.ChangeOilPrice();
+            CountMoney();
         }
 
         public void AddOilLoft(int plateIndex, IOilLoft loft)
@@ -33,7 +41,7 @@ namespace OilMagnate.Core
             _totalMoney -= storage.BuildPrice;
         }
 
-        public void CountMoney()
+        private void CountMoney()
         {
             var totalMoneyPerTurn = 0;
             totalMoneyPerTurn += _plateManager.CountAllPlatesIncome();
