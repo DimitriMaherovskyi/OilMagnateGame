@@ -48,5 +48,29 @@ namespace OilMagnate.Core
 
             _totalMoney += totalMoneyPerTurn;
         }
+
+        public void RecalculateWorkersSalary(int newSalaryPerTurn) //Перерахувати всім нову зарплату
+        {
+            foreach(var plate in _plates)
+            {
+                foreach(var oilLoft in plate.OilLofts)
+                {
+                    foreach(var worker in oilLoft.Workers)
+                    {
+                        worker.SalaryPerTurn = newSalaryPerTurn;
+                    }
+
+                    oilLoft.RecalculateExtractionPerTurn(newSalaryPerTurn);
+                }
+
+                foreach(var oilStorage in plate.OilStorages)
+                {
+                    foreach(var worker in oilStorage.Workers)
+                    {
+                        worker.SalaryPerTurn = newSalaryPerTurn;
+                    }
+                }
+            }
+        }
     }
 }

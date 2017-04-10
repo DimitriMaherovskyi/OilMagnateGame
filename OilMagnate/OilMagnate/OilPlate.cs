@@ -16,9 +16,9 @@ namespace OilMagnate.Models
             OilStorages = new List<IOilStorage>();
         }
 
-        public int MaximumOilPerTurn { get; private set; }
-        public int OilPerTurn { get; set; }
-        public List<IOilLoft> OilLofts { get; set; }
-        public List<IOilStorage> OilStorages { get; set; }
+        public int MaximumOilPerTurn { get; private set; } //Максимальна кількість нафти за хід
+        public int OilPerTurn { get; set; } //Нафта за хід
+        public List<IOilLoft> OilLofts { get; set; } //Вишок
+        public List<IOilStorage> OilStorages { get; set; } //Склади
     }
 }

@@ -9,11 +9,11 @@ namespace OilMagnate.Models
 {
     class Worker : IWorker
     {
-        public Worker()
+        public Worker(int SalaryPerTurn)
         {
-            SalaryPerTurn = 10;
+            this.SalaryPerTurn = SalaryPerTurn;
         }
 
-        public int SalaryPerTurn { get; set; }
+        public int SalaryPerTurn { get; set; } //Зарплата за хід
     }
 }

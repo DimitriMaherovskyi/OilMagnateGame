@@ -9,15 +9,18 @@ namespace OilMagnate.Models
 {
     public class SmallOilLoft : IOilLoft
     {
-        public SmallOilLoft()
+        public int StartWorkerSalary { get; set; }
+
+        public SmallOilLoft(int startWorkerSalary)
         {
+            StartWorkerSalary = startWorkerSalary;
             ExtractionPerTurn = 10;
             Workers = new List<IWorker>()
             {
-                new Worker(),
-                new Worker(),
-                new Worker(),
-                new Worker()
+                new Worker(StartWorkerSalary),
+                new Worker(StartWorkerSalary),
+                new Worker(StartWorkerSalary),
+                new Worker(StartWorkerSalary)
             };
             BuildPrice = 1000;
             MaintancePricePerTurn = 50;
@@ -30,5 +33,12 @@ namespace OilMagnate.Models
         public int BuildPrice { get; private set; }
 
         public int MaintancePricePerTurn { get; private set; }
+
+        public void RecalculateExtractionPerTurn(int newWorkersSalary)
+        {
+            double salaryIncreaseCoef = newWorkersSalary / 10;
+            double extractionEfficiency = ExtractionPerTurn;
+            extractionEfficiency *= salaryIncreaseCoef;
+        }
     }
 }
