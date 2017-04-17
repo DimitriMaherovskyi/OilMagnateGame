@@ -14,7 +14,7 @@ namespace OilMagnate.Models
         public SmallOilStorage(int startWorkerSalary)
         {
             StartWorkerSalary = startWorkerSalary;
-            OilCapacity = 20;
+            MaximumOilCapacity = 20;
             BuildPrice = 1000;
             MaintancePricePerTurn = 50;
             Workers = new List<IWorker>()
@@ -24,7 +24,9 @@ namespace OilMagnate.Models
             };
         }
 
-        public int OilCapacity { get; } //Об'єм нафти
+        public int MaximumOilCapacity { get; } //Максимальний Об'єм нафти
+
+        public int CurrentOilCapacity { get; set; } 
 
         public int BuildPrice { get; } //Варість побудови
 

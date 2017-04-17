@@ -13,12 +13,14 @@ namespace OilMagnate.Core
         private readonly List<IOilPlate> _plates;
         private readonly PlateManager _plateManager;
         private readonly OilPriceManager _oilPriceManager;
+        private readonly OilSaleManager _oilSaleManager;
         private int _totalMoney;
 
         public OilMagnateManager(IEnumerable<IOilPlate> plates)
         {
             _plates = new List<IOilPlate>(plates);
             _plateManager = new PlateManager(_plates);
+            _oilSaleManager = new OilSaleManager(_plates);
             _oilPriceManager = new OilPriceManager();
             _totalMoney = 1000;
         }
@@ -26,6 +28,7 @@ namespace OilMagnate.Core
         public void NextTurn()
         {
             _oilPriceManager.ChangeOilPrice();
+            _oilSaleManager.SptitOilByStorages(_plateManager.CountAllPlatesOilIncome());
             CountMoney();
         }
 
@@ -45,6 +48,7 @@ namespace OilMagnate.Core
         {
             var totalMoneyPerTurn = 0;
             totalMoneyPerTurn += _plateManager.CountAllPlatesIncome();
+            totalMoneyPerTurn += _oilSaleManager.SellOil(_oilPriceManager.OilPrice);
 
             _totalMoney += totalMoneyPerTurn;
         }

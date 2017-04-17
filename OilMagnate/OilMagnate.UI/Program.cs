@@ -27,6 +27,8 @@ namespace OilMagnate.UI
             oilMagnate.AddOilLoft(0, new SmallOilLoft(StartingSalary));
             oilMagnate.AddOilLoft(2, new BigOilLoft(StartingSalary));
             oilMagnate.AddOilStorage(0, new SmallOilStorage(StartingSalary));
+            oilMagnate.AddOilStorage(0, new SmallOilStorage(StartingSalary));
+            oilMagnate.AddOilStorage(0, new SmallOilStorage(StartingSalary));
             oilMagnate.NextTurn();
             oilMagnate.NextTurn();
             oilMagnate.NextTurn();

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="GameStatsManager.cs" />
     <Compile Include="OilPriceManager.cs" />
+    <Compile Include="OilSaleManager.cs" />
     <Compile Include="PlateManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

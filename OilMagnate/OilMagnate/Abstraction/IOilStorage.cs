@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OilMagnate.Models.Abstraction
+﻿namespace OilMagnate.Models.Abstraction
 {
     public interface IOilStorage : IBuilding
     {
-        int OilCapacity { get; }
+        int MaximumOilCapacity { get; }
+        int CurrentOilCapacity { get; set; }
     }
 }
