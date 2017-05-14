@@ -88,6 +88,7 @@ namespace OilMagnate.Managers
             var changePricePercentage = _random.Next(changeBounds.Item1, changeBounds.Item2);
             changePriceCoef += (double)changePricePercentage / 100;
             OilPrice = (int)((double)OilPrice * changePriceCoef);
+            Console.WriteLine("New oil price: " + OilPrice);
         }
     }
 }

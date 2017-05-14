@@ -25,6 +25,8 @@ namespace OilMagnate.Managers
                 totalOilIncome += CountOilIncome(plate);
             }
 
+            Console.WriteLine("Total oil income " + totalOilIncome);
+
             return totalOilIncome;
         }
 

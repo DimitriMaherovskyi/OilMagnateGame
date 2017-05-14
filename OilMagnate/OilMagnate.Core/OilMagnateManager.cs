@@ -51,6 +51,8 @@ namespace OilMagnate.Core
             totalMoneyPerTurn += _oilSaleManager.SellOil(_oilPriceManager.OilPrice);
 
             _totalMoney += totalMoneyPerTurn;
+
+            Console.WriteLine("Total money: " + _totalMoney);
         }
 
         public void RecalculateWorkersSalary(int newSalaryPerTurn) //Перерахувати всім нову зарплату
